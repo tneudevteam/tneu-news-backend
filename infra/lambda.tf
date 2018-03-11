@@ -27,7 +27,7 @@ data "archive_file" "reindex" {
 }
 
 resource "aws_s3_bucket_object" "package" {
-  bucket = "${data.aws_s3_bucket.tf_state.id}"
+  bucket = "${data.aws_s3_bucket.sls.id}"
   key    = "tneu/news/package.zip"
   source = "${data.archive_file.reindex.output_path}"
   etag   = "${md5(file(data.archive_file.reindex.output_path))}"
