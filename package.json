@@ -1,0 +1,38 @@
+{
+  "scripts": {
+    "build": "babel src --out-dir lib --ignore test.js",
+    "coverage": "jest --coverage",
+    "lint": "eslint . --fix",
+    "prepublishOnly": "yarn build",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@tneu/news": "^1.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^22.0.4",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.15.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.5.0",
+    "husky": "^0.15.0-beta.16",
+    "jest": "^22.1.2",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.9.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": ["prettier --write", "git add"]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
