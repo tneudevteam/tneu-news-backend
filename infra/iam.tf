@@ -27,8 +27,6 @@ data "aws_iam_policy_document" "reindex" {
 }
 
 resource "aws_iam_role" "reindex" {
-  name = "${local.env}_${local.fn_name}"
-
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -47,7 +45,6 @@ EOF
 }
 
 resource "aws_iam_role_policy" "reindex" {
-  name   = "${local.env}_${local.fn_name}"
   role   = "${aws_iam_role.reindex.name}"
   policy = "${data.aws_iam_policy_document.reindex.json}"
 }

@@ -4,5 +4,5 @@ locals {
 }
 
 data "aws_s3_bucket" "sls" {
-  bucket = "vladholubiev-sls"
+  bucket = "vladholubiev-serverless"
 }
