@@ -1,9 +1,9 @@
 {
   "plugins": [
-    "@babel/transform-async-to-generator",
+    "@babel/plugin-transform-async-to-generator",
     "@babel/plugin-proposal-async-generator-functions",
     [
-      "@babel/transform-runtime",
+      "@babel/plugin-transform-runtime",
       {
         "helpers": false,
         "polyfill": true,
@@ -14,7 +14,7 @@
   ],
   "presets": [
     [
-      "@babel/env",
+      "@babel/preset-env",
       {
         "targets": {
           "node": "6"
