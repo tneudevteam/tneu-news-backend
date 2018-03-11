@@ -8,3 +8,4 @@ yarn.lock
 .DS_Store
 lib/
 draft.js
+.terraform/
