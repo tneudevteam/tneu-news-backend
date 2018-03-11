@@ -4,6 +4,12 @@ provider "aws" {
   profile = "vlad"
 }
 
+provider "aws.eu_central_1" {
+  region  = "eu-central-1"
+  version = "~> 1.11"
+  profile = "vlad"
+}
+
 provider "archive" {
   version = "~> 1.0"
 }
