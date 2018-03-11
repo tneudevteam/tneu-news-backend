@@ -1,9 +1,10 @@
 jest.mock('@tneu/news');
 
-import {parsePage} from '@tneu/news';
+import {getTotalPages, parsePage} from '@tneu/news';
 import {newsChunkGenerator} from './news';
 
 describe('#newsChunkGenerator', () => {
+  getTotalPages.mockReturnValue(3);
   parsePage
     .mockReturnValueOnce({
       pageNumber: 1,

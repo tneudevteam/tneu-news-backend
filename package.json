@@ -11,9 +11,10 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.40",
-    "@tneu/news": "^1.2.0",
+    "@tneu/news": "^1.4.0",
     "algoliasearch": "^3.25.1",
     "apex.js": "^2.0.0",
+    "lodash": "^4.17.5",
     "p-map": "^1.2.0"
   },
   "devDependencies": {
@@ -43,5 +44,8 @@
   },
   "jest": {
     "testEnvironment": "node"
+  },
+  "resolutions": {
+    "lodash": "4.17.5"
   }
 }
