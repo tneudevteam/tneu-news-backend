@@ -4,13 +4,13 @@ import pMap from 'p-map';
 
 export async function* newsChunkGenerator() {
   const pageNumberChunks = await getPageNumberChunks();
+  let chunk = [];
 
   for (let pageNumberChunk of pageNumberChunks) {
     const parsedPagesChunk = await getPagesChunk(pageNumberChunk);
 
     let lastPageNumber = 0;
     let currentPage = {hasNext: true, pageNumber: 1};
-    let chunk = [];
 
     // TODO remove pageNumber from condition once tested
     while (parsedPagesChunk.length && currentPage.pageNumber < 50) {
@@ -25,11 +25,11 @@ export async function* newsChunkGenerator() {
         chunk = [];
       }
     }
+  }
 
-    if (chunk.length) {
-      console.log(`[news][yield][last]`);
-      yield chunk;
-    }
+  if (chunk.length) {
+    console.log(`[news][yield][last]`);
+    yield chunk;
   }
 }
 
