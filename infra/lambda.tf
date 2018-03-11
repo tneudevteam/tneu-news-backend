@@ -1,5 +1,5 @@
 resource "aws_lambda_function" "reindex" {
-  function_name    = "${local.env}_${local.fn_name}"
+  function_name    = "${local.env}-${local.fn_name}"
   handler          = "handlers/reindex/handler.handler"
   runtime          = "nodejs6.10"
   role             = "${aws_iam_role.reindex.arn}"
@@ -15,7 +15,8 @@ resource "aws_lambda_function" "reindex" {
 
   environment {
     variables {
-      ALGOLIA = 1
+      ALGOLIA_CLIENT_ID     = "${data.aws_ssm_parameter.algolia_client_id.value}"
+      ALGOLIA_CLIENT_SECRET = "${data.aws_ssm_parameter.algolia_client_secret.value}"
     }
   }
 }
