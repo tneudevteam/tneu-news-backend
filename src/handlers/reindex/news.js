@@ -19,7 +19,7 @@ export async function* newsChunkGenerator() {
 
       chunk.push(...currentPage.items);
 
-      if (chunk.length >= 100) {
+      if (chunk.length >= 1000) {
         console.log(`[news][yield]`);
         yield chunk;
         chunk = [];
