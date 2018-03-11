@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.40",
-    "@tneu/news": "^1.6.0",
+    "@tneu/news": "^1.6.1",
     "algoliasearch": "^3.25.1",
     "apex.js": "^2.0.0",
     "aws-xray-sdk-core": "^1.2.0",
