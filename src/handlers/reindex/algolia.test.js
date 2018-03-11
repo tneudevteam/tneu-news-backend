@@ -1,10 +1,16 @@
 jest.mock('./algolia-client');
 
 import {getClient} from './algolia-client';
-import {createTempIndex} from './algolia';
+import {getIndexTemp, getIndex} from './algolia';
 
-describe('#createTempIndex', () => {
-  it('should export createTempIndex function', () => {
-    expect(createTempIndex).toBeInstanceOf(Function);
+describe('#getIndexTemp', () => {
+  it('should export getIndexTemp function', () => {
+    expect(getIndexTemp).toBeInstanceOf(Function);
+  });
+});
+
+describe('#getIndex', () => {
+  it('should export getIndex function', () => {
+    expect(getIndex).toBeInstanceOf(Function);
   });
 });
