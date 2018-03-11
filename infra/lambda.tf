@@ -7,7 +7,7 @@ resource "aws_lambda_function" "reindex" {
   s3_key           = "${aws_s3_bucket_object.package.key}"
   source_code_hash = "${base64sha256(file(data.archive_file.reindex.output_path))}"
   memory_size      = 3008
-  timeout          = 30
+  timeout          = 60
 
   tracing_config {
     mode = "Active"
