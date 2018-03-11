@@ -32,7 +32,7 @@ async function getPageNumberChunks() {
   const totalPages = await getTotalPages();
   console.log(`[news][pages:${totalPages}]`);
 
-  const pageNumberChunks = _.chunk(_.times(totalPages), Math.ceil(totalPages / 10));
+  const pageNumberChunks = _.chunk(_.times(totalPages), Math.ceil(totalPages / 5));
   console.log(`[news][pages-chunks:${pageNumberChunks.length}]`);
 
   return pageNumberChunks;
@@ -42,7 +42,7 @@ async function getPagesChunk(pageNumberChunk) {
   const loadRange = `${_.head(pageNumberChunk)}-${_.last(pageNumberChunk)}`;
   console.log(`[news][start:${loadRange}]`);
 
-  const pagesChunk = await pMap(pageNumberChunk, i => parsePage(i + 1), {concurrency: 50});
+  const pagesChunk = await pMap(pageNumberChunk, i => parsePage(i + 1), {concurrency: 75});
   console.log(`[news][loaded:${loadRange}]`);
 
   return pagesChunk;
