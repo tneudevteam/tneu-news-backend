@@ -47,7 +47,7 @@ async function getPagesChunk(pageNumberChunk) {
   const loadRange = `${_.head(pageNumberChunk)}-${_.last(pageNumberChunk)}`;
   console.log(`[news][start:${loadRange}]`);
 
-  const pagesChunk = await pMap(pageNumberChunk, i => parsePage(i + 1), {concurrency: 5});
+  const pagesChunk = await pMap(pageNumberChunk, i => parsePage(i + 1), {concurrency: 50});
   console.log(`[news][loaded:${loadRange}]`);
 
   return pagesChunk;
