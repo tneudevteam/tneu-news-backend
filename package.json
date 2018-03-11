@@ -7,7 +7,7 @@
     "postdeploy": "yarn",
     "lint": "eslint . --fix",
     "prepublishOnly": "yarn build",
-    "test": "jest"
+    "test": "jest src"
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.40",
@@ -23,7 +23,8 @@
     "@babel/plugin-transform-async-to-generator": "^7.0.0-beta.40",
     "@babel/plugin-transform-runtime": "^7.0.0-beta.40",
     "@babel/preset-env": "^7.0.0-beta.40",
-    "babel-jest": "^22.0.4",
+    "babel-core": "^7.0.0-0",
+    "babel-jest": "^22.4.1",
     "eslint": "^4.15.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.5.0",
