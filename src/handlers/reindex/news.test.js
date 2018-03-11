@@ -9,12 +9,12 @@ describe('#newsChunkGenerator', () => {
     .mockReturnValueOnce({
       pageNumber: 1,
       hasNext: true,
-      items: 'a'.repeat(1000).split('')
+      items: 'a'.repeat(500).split('')
     })
     .mockReturnValueOnce({
       pageNumber: 2,
       hasNext: true,
-      items: 'b'.repeat(1000).split('')
+      items: 'b'.repeat(500).split('')
     })
     .mockReturnValueOnce({
       pageNumber: 3,
@@ -34,11 +34,11 @@ describe('#newsChunkGenerator', () => {
       ++i;
 
       if (i === 1) {
-        expect(chunk).toEqual('a'.repeat(1000).split(''));
+        expect(chunk).toEqual('a'.repeat(500).split(''));
       }
 
       if (i === 2) {
-        expect(chunk).toEqual('b'.repeat(1000).split(''));
+        expect(chunk).toEqual('b'.repeat(500).split(''));
       }
 
       if (i === 3) {
