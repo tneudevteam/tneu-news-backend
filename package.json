@@ -2,6 +2,9 @@
   "scripts": {
     "build": "babel src --out-dir lib --ignore test.js",
     "coverage": "jest --coverage",
+    "deploy": "cd infra && terraform apply",
+    "predeploy": "./build.sh",
+    "postdeploy": "yarn",
     "lint": "eslint . --fix",
     "prepublishOnly": "yarn build",
     "test": "jest"
