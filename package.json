@@ -2,7 +2,7 @@
   "scripts": {
     "build": "babel src --out-dir lib --ignore test.js",
     "coverage": "jest --coverage",
-    "deploy": "cd infra && terraform apply",
+    "deploy": "cd infra && terraform apply -auto-approve",
     "predeploy": "./build.sh",
     "postdeploy": "yarn",
     "lint": "eslint . --fix",
@@ -14,6 +14,7 @@
     "@tneu/news": "^1.4.0",
     "algoliasearch": "^3.25.1",
     "apex.js": "^2.0.0",
+    "aws-xray-sdk-core": "^1.2.0",
     "lodash": "^4.17.5",
     "p-map": "^1.2.0"
   },
