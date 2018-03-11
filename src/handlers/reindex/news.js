@@ -6,6 +6,7 @@ export async function* newsChunkGenerator() {
   let chunk = [];
   console.log(`[news][start]`);
 
+  // TODO remove pageNumber from condition once tested
   while (currentPage.hasNext && currentPage.pageNumber < 10) {
     currentPage = await parsePage(lastPageNumber + 1);
     lastPageNumber = currentPage.pageNumber;
