@@ -12,7 +12,6 @@ export async function* newsChunkGenerator() {
     while (parsedPagesChunk.length) {
       const currentPage = parsedPagesChunk.shift();
       chunk.push(...currentPage.items);
-      console.log(`[news][chunk-size:${chunk.length}]`);
 
       if (chunk.length >= 500) {
         console.log(`[news][yield]`);
